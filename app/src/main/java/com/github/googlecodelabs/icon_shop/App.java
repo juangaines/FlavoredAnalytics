@@ -17,7 +17,9 @@ package com.github.googlecodelabs.icon_shop;
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.annotation.WorkerThread;
+
+
+import androidx.annotation.WorkerThread;
 
 import java.util.ArrayList;
 import java.util.Collections;

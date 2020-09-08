@@ -19,21 +19,26 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NavUtils;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class CartActivity extends AppCompatActivity {
+public class CartActivity extends BaseActivity {
     private List<App.ItemData> mCardContent;
 
     private RecyclerView.LayoutManager mItemListLayoutManager;
@@ -90,6 +95,9 @@ public class CartActivity extends AppCompatActivity {
                         }.execute();
                     }
                 }, TimeUnit.SECONDS.toMillis(2)); // Delay for 2 seconds
+
+                logEcommercePurchase(getCartBalance());
+
             }
         });
 
